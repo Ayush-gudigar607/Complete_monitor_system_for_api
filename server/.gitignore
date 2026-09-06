@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.env
+./logs/
+postgres-data/
+postgres-data/*
+pgadmin-data/pgadmin4.db
+pgadmin-data/
+*.log

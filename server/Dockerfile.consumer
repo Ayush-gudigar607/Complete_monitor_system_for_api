@@ -1,0 +1,19 @@
+FROM node:22-alpine
+
+#creates the working directory for consumer 
+WORKDIR /app
+
+#copy the package.json file to docker package.json 
+COPY package*.json ./
+
+#Run the command for production 
+RUN npm install --production
+
+#copy the all above information to source to destination 
+COPY . .
+
+#after copying make logs folder to stores log 
+RUN mkdir -p logs
+
+#comnand to run the consumer 
+CMD [ "node","src/services/processor/consumer.js" ]
